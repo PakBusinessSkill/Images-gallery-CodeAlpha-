@@ -1,0 +1,170 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodeAlpha - Classic Corolla Gallery</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: url('https://images.adsttc.com/media/images/5ec3/88ea/b357/65cf/6100/0188/newsletter/05.jpg?1589872836') no-repeat center center/cover;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header {
+      text-align: center;
+      padding: 30px 10px;
+      background: rgba(0, 0, 0, 0.6);
+      width: 100%;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      color: #ffcc00;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+
+    /* Gallery Section */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      padding: 40px;
+      width: 90%;
+      max-width: 1200px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.08);
+      border-radius: 15px;
+      overflow: hidden;
+      backdrop-filter: blur(5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      background: rgba(255,255,255,0.2);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      opacity: 0.9; /* makes Toyota logo visible behind */
+      transition: opacity 0.3s ease;
+    }
+
+    .card:hover img {
+      opacity: 1;
+    }
+
+    .card h3 {
+      text-align: center;
+      padding: 15px;
+      font-size: 1.1rem;
+      background: rgba(0,0,0,0.5);
+      color: #ffcc00;
+      letter-spacing: 1px;
+    }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.9);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+      flex-direction: column;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.5);
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 40px;
+      font-size: 30px;
+      color: white;
+      cursor: pointer;
+    }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.5rem; }
+      .card img { height: 150px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🚗 CodeAlpha - Classic Corolla Gallery</h1>
+  </header>
+
+  <section class="gallery">
+    <div class="card"><img src="https://www.carsome.my/news/wp-content/uploads/wp/02_CRL6610_02_s.jpg" alt="Corolla 1970"><h3>Corolla 1970</h3></div>
+    <div class="card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Toyota_Corolla_E20_April_1976_1166cc.JPG/330px-Toyota_Corolla_E20_April_1976_1166cc.JPG" alt="Corolla 1975"><h3>Corolla 1975</h3></div>
+    <div class="card"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Toyota-CorollaE70.JPG" alt="Corolla 1980"><h3>Corolla 1980</h3></div>
+    <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzmEcCRBh5CG0C_oCFNwJKSxDrfuZnA9YptA&s" alt="Corolla 1985"><h3>Corolla 1985</h3></div>
+    <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAKmf71_hNQVPgiOjKFXGHG_0dyRbIDEOcVg&s" alt="Corolla 1990"><h3>Corolla 1990</h3></div>
+    <div class="card"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgw8ls1cu9JY9uo02ACmORV-s2duRmVl04z6fW-EWDAfwNBwNfoUdrn5TjRYafT0D-oScQa-fJBldRejGP7Bgxuh6rf8TW1QAHosOJOaKyczcU30-9gCm-u3SGGiXyHjQiYaQ06N4mTqbY/s1600/wallpapers_toyota_corolla_1991_4_b.jpg" alt="Corolla 1995"><h3>Corolla 1995</h3></div>
+    <div class="card"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgH-yB9Gf3dr9Ju6xxVayZD8MDfrWF78OnmSW6nUnJBJ1rxz6f5wW59w-U4sl8GqGyL0Va4aUlifFz4njAJqxHmjCKIWquYMGT6ak_vszBpK0a6UIRUXR9Og4TlyqDfejMbatxgnpmpos0B/s1600/Toyota-Corolla-1999+%25284%2529.jpg" alt="Corolla 2000"><h3>Corolla 2000</h3></div>
+    <div class="card"><img src="https://carsales.pxcrush.net/carsales/car/dealer/7r5htwxx1smndzptaig202wbk.jpg?pxc_method=GravityFill&width=480&height=320&watermark=1324771541" alt="Corolla 2005"><h3>Corolla 2005</h3></div>
+    <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4MxAQTI5UbZ5uAkdIlFyXAEd0TZUdcGUtBg&s" alt="Corolla 2010"><h3>Corolla 2010</h3></div>
+    <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6A_xYjHURLQbv6wyaU9mZJUa1keZdR__q6g&s" alt="Corolla 2015"><h3>Corolla 2015</h3></div>
+    <div class="card"><img src="https://www.toyotaghana.com/admin_ghana/photos/1873__2.jpg" alt="Corolla 2020"><h3>Corolla 2020</h3></div>
+    <div class="card"><img src="https://www.gari.pk/images/new/cars/2025-01/2951_1_23128.jpg" alt="Corolla 2025"><h3>Corolla 2025</h3></div>
+  </section>
+
+  <div class="lightbox" id="lightbox">
+    <span class="close-btn" id="closeBtn">&times;</span>
+    <img id="lightboxImg" src="" alt="Full Image">
+  </div>
+
+  <script>
+    const images = document.querySelectorAll('.card img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const closeBtn = document.getElementById('closeBtn');
+
+    images.forEach(img => {
+      img.addEventListener('click', () => {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = img.src;
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+    });
+
+    window.addEventListener('click', (e) => {
+      if (e.target === lightbox) lightbox.style.display = 'none';
+    });
+  </script>
+</body>
+</html>
